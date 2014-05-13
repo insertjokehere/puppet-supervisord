@@ -52,6 +52,5 @@ define supervisord::program (
     group   => 'root',
     mode    => '0644',
     notify  => Exec['supervisorctl update'],
-    require => Class['supervisord']
   }
 }
