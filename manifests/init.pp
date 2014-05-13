@@ -60,5 +60,8 @@ class supervisord {
   } -> service { $supervisord_service:
     ensure  => 'running',
     enable  => true
+  } -> exec { 'supervisorctl update':
+    command     => '/usr/bin/supervisorctl update',
+    refreshonly => true
   }
 }

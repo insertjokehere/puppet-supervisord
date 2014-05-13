@@ -27,6 +27,7 @@ define supervisord::group (
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+    notify  => Exec['supervisorctl update'],
     require => Class['supervisord']
   }
 }
