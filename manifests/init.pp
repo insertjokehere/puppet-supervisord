@@ -57,6 +57,8 @@ class supervisord {
     owner   => 'root',
     group   => 'root',
     mode    => '0644'
+  } -> group { 'supervisor':
+    ensure => present
   } -> service { $supervisord_service:
     ensure  => 'running',
     enable  => true
